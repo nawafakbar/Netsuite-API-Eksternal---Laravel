@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - everlast.project</title>
+    <title>Admin - Netsuite</title>
     <link rel="icon" type="image/png" href="{{ asset('assets/images/netsutelogos.png') }}">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +21,7 @@
 
     <div id="mobileOverlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 hidden md:hidden transition-opacity" onclick="toggleMobileSidebar()"></div>
 
-    <aside id="sidebar" class="w-64 bg-white border-r border-gray-200 flex-shrink-0 flex flex-col fixed md:relative z-40 h-full transform -translate-x-full md:translate-x-0">
+    <aside id="sidebar" class="w-64 bg-white border-r border-gray-200 shrink-0 flex flex-col fixed md:relative z-40 h-full transform -translate-x-full md:translate-x-0">
         
         <div class="h-16 flex items-center justify-center border-b border-gray-100">
             <h1 id="brandLogo" class="text-black text-base font-semibold tracking-[0.2em] uppercase transition-all duration-300">NETSUITE.</h1>
@@ -49,6 +49,17 @@
                             <i class="fas fa-money-bill text-xs transition-colors {{ request()->routeIs('purchaseorders.index') ? 'text-gray-500' : 'text-gray-400 group-hover:text-black' }}"></i>
                         </div>
                         <span class="sidebar-text ml-3 font-medium text-xs tracking-wide uppercase whitespace-nowrap">Purchase Order</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('customers.index') }}" 
+                       class="flex items-center px-4 py-2.5 rounded-sm transition-all duration-300 group {{ request()->routeIs('customers.index') ? 'bg-gray-100 text-gray-500' : 'text-gray-500 hover:text-black hover:bg-gray-50' }}"
+                       title="Overview">
+                        <div class="w-6 flex items-center justify-center">
+                            <i class="fas fa-users text-xs transition-colors {{ request()->routeIs('customers.index') ? 'text-gray-500' : 'text-gray-400 group-hover:text-black' }}"></i>
+                        </div>
+                        <span class="sidebar-text ml-3 font-medium text-xs tracking-wide uppercase whitespace-nowrap">Customer</span>
                     </a>
                 </li>
 
@@ -113,7 +124,7 @@
                 // Ganti Icon Tombol & Logo
                 collapseIcon.classList.remove('fa-outdent');
                 collapseIcon.classList.add('fa-indent');
-                brandLogo.innerText = 'EV.';
+                brandLogo.innerText = 'NT.';
             } else {
                 // Mode Perbesar (Expanded)
                 sidebar.classList.remove('w-20');
@@ -125,7 +136,7 @@
                 // Kembalikan Icon Tombol & Logo
                 collapseIcon.classList.remove('fa-indent');
                 collapseIcon.classList.add('fa-outdent');
-                brandLogo.innerText = 'everlast.';
+                brandLogo.innerText = 'netsuite.';
             }
         }
     </script>
